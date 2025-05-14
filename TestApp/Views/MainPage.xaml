@@ -35,7 +35,7 @@
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center">
             <TextBlock Style="{StaticResource ResourceKey=TitleText}"
-                       Margin="5"> Пользователь 
+                       Margin="5"> Пользователь
             </TextBlock>
             <Button Style="{StaticResource TransparentButton}"
                     Click="ExitButton_Click">
@@ -46,13 +46,12 @@
             </Button>
         </WrapPanel>
 
-        <ListBox Grid.Row="1"
+        <ListBox x:Name="testsListBox"
+                 Grid.Row="1"
                  Grid.ColumnSpan="2"
                  Margin="15"
-                 SelectionChanged="ListBox_SelectionChanged"
                  HorizontalContentAlignment="Stretch"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            1
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="1"
@@ -63,7 +62,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="4*" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="1.5*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -74,17 +73,17 @@
                             <Image Grid.RowSpan="3"
                                    Margin="0,0,8,0"
                                    VerticalAlignment="Top"
-                                   Source="/Images/empty.png" />
+                                   Source="{Binding ImageSource, TargetNullValue=/Images/empty.png}" />
 
                             <StackPanel Grid.Column="1"
                                         Orientation="Horizontal">
-                                <TextBlock Text="Дисциплина" />
+                                <TextBlock Text="{Binding Subject.SubjectName}" />
                                 <TextBlock Text=" | " />
-                                <TextBlock Text="Название теста" />
+                                <TextBlock Text="{Binding TestName}" />
                             </StackPanel>
 
                             <TextBlock Grid.Column="2"
-                                       Text="Преподователь"
+                                       Text="{Binding CreatedByNavigation.Fullname}"
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Top"
                                        Margin="10 0" />
@@ -92,7 +91,7 @@
                             <TextBlock Grid.Row="1"
                                        Grid.Column="1"
                                        Grid.ColumnSpan="2"
-                                       Text="Описание теста, предусмотрите чтобы длинное описание помещалось на следующую строку и не наслаивалось на другие элементы списка. Описание теста, предусмотрите чтобы длинное описание помещалось на следующую строку и не наслаивалось на другие элементы списка. "
+                                       Text="{Binding Description}"
                                        TextWrapping="Wrap"
                                        Margin="0,4,0,0"
                                        FontSize="10px" />

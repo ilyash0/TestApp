@@ -23,11 +23,7 @@ namespace TestApp
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            testsListBox.ItemsSource = ViewModel.GetTestsForView();
         }
 
         private void AddTestButton_Click(object sender, RoutedEventArgs e)
