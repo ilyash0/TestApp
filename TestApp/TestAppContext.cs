@@ -43,7 +43,7 @@ public partial class TestAppContext : DbContext
             string host = Env.GetString("DB_HOST", "localhost");
             string user = Env.GetString("DB_USER", "postgres");
             string password = Env.GetString("DB_PASSWORD", "root");
-            string database = Env.GetString("DB_NAME", "repair_request");
+            string database = Env.GetString("DB_NAME", "test_app");
 
             // Формируем строку подключения
             string connectionString = $"Host={host}; Username={user}; Password={password}; Database={database}";
