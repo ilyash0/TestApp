@@ -99,8 +99,7 @@
                                         <Run Text="1" />
                                     </TextBlock>
                                     <TextBlock Text="Текст вопроса"
-                                               Margin="5">
-                                    </TextBlock>
+                                               Margin="5" />
                                 </WrapPanel>
                                 <WrapPanel Grid.Column="2"
                                            HorizontalAlignment="Right">
@@ -109,16 +108,14 @@
                                         <Image Source="/Images/edit_icon.png"
                                                Margin="5"
                                                MaxHeight="30"
-                                               MinHeight="10">
-                                        </Image>
+                                               MinHeight="10" />
                                     </Button>
 
                                     <Button Style="{StaticResource TransparentButton}">
                                         <Image Source="/Images/delete_icon.png"
                                                Margin="5"
                                                MaxHeight="30"
-                                               MinHeight="10">
-                                        </Image>
+                                               MinHeight="10" />
                                     </Button>
                                 </WrapPanel>
                             </Grid>

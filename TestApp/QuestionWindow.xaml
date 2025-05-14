@@ -96,8 +96,7 @@
                 MinWidth="100"
                 Click="SaveButton_Click">
             <TextBlock Text="Завершить"
-                       Foreground="White">
-            </TextBlock>
+                       Foreground="White" />
         </Button>
     </Grid>
 </Window>
