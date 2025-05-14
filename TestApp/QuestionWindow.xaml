@@ -1,0 +1,103 @@
+﻿<Window x:Class="TestApp.QuestionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApp"
+        mc:Ignorable="d"
+        Title="Добавление/редактирование вопроса"
+        Height="275"
+        Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Style="{StaticResource ResourceKey=TitleText}"
+                   Text="Добавление/редактирование вопроса"
+                   HorizontalAlignment="Center"
+                   Margin="5" />
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Текст вопроса"
+                   VerticalAlignment="Center"
+                   Margin="5" />
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Margin="5"
+                 MaxHeight="27"
+                 MinHeight="10" />
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Верный ответ"
+                   VerticalAlignment="Center"
+                   Margin="5" />
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 Margin="5"
+                 MaxHeight="27"
+                 MinHeight="10" />
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Неверный ответ"
+                   VerticalAlignment="Center"
+                   Margin="5" />
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 Margin="5"
+                 MaxHeight="27"
+                 MinHeight="10" />
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Text="Неверный ответ"
+                   VerticalAlignment="Center"
+                   Margin="5" />
+        <TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 Margin="5"
+                 MaxHeight="27"
+                 MinHeight="10" />
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Text="Неверный ответ"
+                   VerticalAlignment="Center"
+                   Margin="5" />
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 Margin="5"
+                 MaxHeight="27"
+                 MinHeight="10" />
+
+        <Button Grid.Column="0"
+                Grid.Row="6"
+                Grid.ColumnSpan="2"
+                VerticalAlignment="Top"
+                Style="{StaticResource BlueButton}"
+                MaxHeight="35"
+                MinHeight="10"
+                MaxWidth="120"
+                MinWidth="100"
+                Click="SaveButton_Click">
+            <TextBlock Text="Завершить"
+                       Foreground="White">
+            </TextBlock>
+        </Button>
+    </Grid>
+</Window>

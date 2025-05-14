@@ -1,0 +1,131 @@
+﻿<Window x:Class="TestApp.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApp"
+        mc:Ignorable="d"
+        Title="Добавление/редактирование теста"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="0"
+                   Style="{StaticResource ResourceKey=TitleText}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="5">
+        <Image Source="/images/testing_icon.png"
+               Height="24px" /> Добавление/редактирование теста
+        </TextBlock>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,5,0">
+
+            <Button Margin="7"
+                    Style="{StaticResource TransparentButton}"
+                    Click="AddQuestionButton_Click">
+                <Image Source="/Images/add_icon.png"
+                       Stretch="Uniform" />
+            </Button>
+
+            <Button VerticalAlignment="Center"
+                    Padding="5"
+                    Style="{StaticResource BlueButton}"
+                    Click="SaveButton_Click">Сохранить</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Grid.ColumnSpan="2">
+            <DockPanel>
+                <TextBlock Text="Название теста"
+                           Margin="5px 5px" />
+                <TextBox HorizontalAlignment="Stretch"
+                         HorizontalContentAlignment="Stretch"
+                         Margin="10px 5px" />
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Text="Дисциплина"
+                           Margin="5px 5px" />
+                <ComboBox SelectedIndex="0"
+                          Padding="1"
+                          Margin="25px 5px 5px 5px">
+                    <ComboBoxItem>Информатика</ComboBoxItem>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Text="Обложка"
+                           Margin="5px 5px" />
+                <TextBox Text="Выбрать изображение"
+                         HorizontalAlignment="Stretch"
+                         HorizontalContentAlignment="Stretch"
+                         Margin="43px 5px 5px 5px" />
+            </DockPanel>
+        </StackPanel>
+        <ListBox Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                 HorizontalContentAlignment="Stretch"
+                 BorderThickness="0">
+            1
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="2"
+                            BorderBrush="Gray"
+                            Padding="3">
+                        <Border BorderThickness="2"
+                                BorderBrush="#FF304FFE">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <WrapPanel Grid.Column="0"
+                                            HorizontalAlignment="Left">
+                                    <TextBlock Margin="5">
+                                        <Run Text="№" />
+                                        <Run Text="1" />
+                                    </TextBlock>
+                                    <TextBlock Text="Текст вопроса"
+                                               Margin="5">
+                                    </TextBlock>
+                                </WrapPanel>
+                                <WrapPanel Grid.Column="2"
+                                           HorizontalAlignment="Right">
+                                    <Button Style="{StaticResource TransparentButton}"
+                                            Click="EditQuestionButton_Click">
+                                        <Image Source="/Images/edit_icon.png"
+                                               Margin="5"
+                                               MaxHeight="30"
+                                               MinHeight="10">
+                                        </Image>
+                                    </Button>
+
+                                    <Button Style="{StaticResource TransparentButton}">
+                                        <Image Source="/Images/delete_icon.png"
+                                               Margin="5"
+                                               MaxHeight="30"
+                                               MinHeight="10">
+                                        </Image>
+                                    </Button>
+                                </WrapPanel>
+                            </Grid>
+                        </Border>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

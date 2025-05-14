@@ -1,0 +1,140 @@
+﻿<Page x:Class="TestApp.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:TestApp"
+      mc:Ignorable="d"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      Title="Тесты">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="0"
+                   Style="{StaticResource ResourceKey=TitleText}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="5">
+        <Image Source="/images/testing_icon.png"
+               Height="24px" /> Список тестов
+        </TextBlock>
+
+        <WrapPanel Grid.Column="1"
+                   Grid.Row="0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource ResourceKey=TitleText}"
+                       Margin="5"> Пользователь 
+            </TextBlock>
+            <Button Style="{StaticResource TransparentButton}"
+                    Click="ExitButton_Click">
+                <Image Source="/Images/exit_icon.png"
+                       Margin="3"
+                       MaxHeight="24"
+                       MinHeight="10" />
+            </Button>
+        </WrapPanel>
+
+        <ListBox Grid.Row="1"
+                 Grid.ColumnSpan="2"
+                 Margin="15"
+                 SelectionChanged="ListBox_SelectionChanged"
+                 HorizontalContentAlignment="Stretch"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            1
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1"
+                            BorderBrush="#FF304FFE"
+                            Padding="2"
+                            Margin="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="4*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.RowSpan="3"
+                                   Margin="0,0,8,0"
+                                   VerticalAlignment="Top"
+                                   Source="/Images/empty.png" />
+
+                            <StackPanel Grid.Column="1"
+                                        Orientation="Horizontal">
+                                <TextBlock Text="Дисциплина" />
+                                <TextBlock Text=" | " />
+                                <TextBlock Text="Название теста" />
+                            </StackPanel>
+
+                            <TextBlock Grid.Column="2"
+                                       Text="Преподователь"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Top"
+                                       Margin="10 0" />
+
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="1"
+                                       Grid.ColumnSpan="2"
+                                       Text="Описание теста, предусмотрите чтобы длинное описание помещалось на следующую строку и не наслаивалось на другие элементы списка. Описание теста, предусмотрите чтобы длинное описание помещалось на следующую строку и не наслаивалось на другие элементы списка. "
+                                       TextWrapping="Wrap"
+                                       Margin="0,4,0,0"
+                                       FontSize="10px" />
+
+                            <StackPanel Grid.Row="2"
+                                        Grid.Column="2"
+                                        Orientation="Horizontal"
+                                        HorizontalAlignment="Right"
+                                        Margin="0,4,0,0">
+
+                                <Button Width="30"
+                                        Height="30"
+                                        Margin="0,0,4,0"
+                                        Style="{StaticResource TransparentButton}"
+                                        Click="EditTestButton_Click">
+                                    <Image Source="/Images/edit_icon.png"
+                                           Stretch="Uniform" />
+                                </Button>
+
+                                <Button Width="30"
+                                        Height="30"
+                                        Style="{StaticResource TransparentButton}">
+                                    <Image Source="/Images/delete_icon.png"
+                                           Stretch="Uniform" />
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button Grid.Column="1"
+                Grid.Row="2"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="5"
+                Height="35px"
+                Style="{StaticResource TransparentButton}"
+                Click="AddTestButton_Click">
+            <Image Source="/Images/add_icon.png"
+                   Stretch="Uniform" />
+        </Button>
+    </Grid>
+</Page>
